@@ -42,7 +42,7 @@ class Footer extends React.Component {
               <h3 className='lead'><strong>Information</strong> and <strong>Copyright</strong></h3>
               <p>© 2016 Daniel Martinez.</p>
             </div>
-            <div className='col-sm-7 hidden-xs'>
+            <div className='col-sm-7 col-xs-12'>
               <h3 className='lead'><strong>Leaderboard</strong> Top 5 Guitars</h3>
               <ul className='list-inline'>
                 {leaderboardGuitars}
