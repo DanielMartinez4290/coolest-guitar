@@ -132,9 +132,6 @@ app.get('/api/guitars/search', function(req, res, next) {
  * Returns top guitars
  */
 app.get('/api/guitars/top', function(req, res, next) {
-  
-  var params = req.query;
-  
 
   Guitar
     .find()
