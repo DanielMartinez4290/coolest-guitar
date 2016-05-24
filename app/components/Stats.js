@@ -24,7 +24,7 @@ class Stats extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='container statsPage'>
         <div className='panel panel-default'>
           <table className='table table-striped'>
             <thead>

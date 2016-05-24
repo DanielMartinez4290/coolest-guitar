@@ -414,7 +414,6 @@ label {
 }
 
 .profile-info {
-  margin: 0 0 20px 286px;
   max-width: 405px;
   color: #fff;
 }
@@ -445,7 +444,47 @@ label {
   border-top: 1px solid rgba(255,255,255,.15);
   border-bottom: 1px solid rgba(255,255,255,.15)
 }
+.guitarPage{
+    margin-top: 74px;
+}
 
+@media (max-width : 1200px) {
+  .statsPage.container{
+    margin-top:111px;
+  }
+}
+
+@media (max-width: 992px) {
+  
+  body{
+    margin-bottom: 309px;
+  }
+  .statsPage.container{
+    margin-top:67px;
+  }
+
+}
+@media (max-width: 768px) {
+  
+  body{
+    margin-bottom: 253px;
+  }
+  .guitarPage{
+    margin-top: 0;
+  }
+  .profileFullText, .footerText{
+    text-align: center;
+  }
+  .profile-info,.profile-img{
+    padding:0;
+    width:100%;
+    max-width: none;
+  }
+  .statsPage.container{
+    margin-top:67px;
+  }
+
+}
 
 @media (max-width: 510px) {
   .profile-stats {
@@ -454,11 +493,32 @@ label {
   .list-inline > li{
     padding:0;
   }
+  .profileFullText, .footerText{
+    text-align: center;
+  }
+  body{
+    margin-bottom: 253px;
+  }
+  .guitarPage{
+    margin-top: 0;
+  }
+  .statsPage.container{
+    margin-top:67px;
+  }
+
+  .profile-info,.profile-img{
+    padding:0;
+  }
+
 }
+
 
 @media (max-width: 360px) {
   .profile-stats {
     padding: 10px 0
+  }
+  .profile-info,.profile-img{
+    padding:0;
   }
 }
 

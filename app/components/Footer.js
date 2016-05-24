@@ -35,14 +35,15 @@ class Footer extends React.Component {
     });
 
     return (
+      
       <footer>
         <div className='container'>
-          <div className='row'>
-            <div className='col-sm-5 col-xs-12'>
+          <div className='row footerText'>
+            <div className='col-md-5 col-xs-12 col-sm-12'>
               <h3 className='lead'><strong>Information</strong> and <strong>Copyright</strong></h3>
               <p>© 2016 Daniel Martinez.</p>
             </div>
-            <div className='col-sm-7 col-xs-12'>
+            <div className='col-md-7 col-xs-12 col-sm-12'>
               <h3 className='lead'><strong>Leaderboard</strong> Top 5 Guitars</h3>
               <ul className='list-inline'>
                 {leaderboardGuitars}
@@ -51,6 +52,7 @@ class Footer extends React.Component {
           </div>
         </div>
       </footer>
+
     );
   }
 }

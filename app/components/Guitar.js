@@ -31,18 +31,20 @@ class Guitar extends React.Component {
 
   render() {
     return (
-      <div className='container'>
-        <div className='profile-img'>
-            <img src={'/public/img/'+this.state.picture} height="250" />
+      <div className='container guitarPage'>
+        <div className="row profileFullText">
+
+          <div className='profile-img col-xs-12 col-sm-12 col-md-6'>
+              <img src={'/public/img/'+this.state.picture} height="250" />
+          </div>
+          <div className='profile-info clearfix col-xs-12 col-sm-12 col-md-6'>
+            <h4 className='lead profileText'><strong>Brand:</strong> {this.state.brand}</h4>
+            <h4 className='lead profileText'><strong>Model:</strong> {this.state.model}</h4>
+            <h4 className='lead profileText'><strong>Wins:</strong> {this.state.wins}</h4>
+            <h4 className='lead profileText'><strong>Losses:</strong> {this.state.losses}</h4>
+            <h4 className='lead profileText'><strong>Winning Percentage:</strong> {this.state.winLossRatio}</h4>
         </div>
-        <div className='profile-info clearfix'>
-          <h2><strong>{this.state.name}</strong></h2>
-          <h4 className='lead profileText'><strong>Brand:</strong> {this.state.brand}</h4>
-          <h4 className='lead profileText'><strong>Model:</strong> {this.state.model}</h4>
-          <h4 className='lead profileText'><strong>Wins:</strong> {this.state.wins}</h4>
-          <h4 className='lead profileText'><strong>Losses:</strong> {this.state.losses}</h4>
-          <h4 className='lead profileText'><strong>Winning Percentage:</strong> {this.state.winLossRatio}</h4>
-        </div>
+      </div>
       </div>
     );
   }
