@@ -134,24 +134,14 @@ app.get('/api/guitars/search', function(req, res, next) {
 app.get('/api/guitars/top', function(req, res, next) {
   
   var params = req.query;
-  var conditions = {};
-
-  _.each(params, function(value, key) {
-    conditions[key] = new RegExp('^' + value + '$', 'i');
-  });
+  
 
   Guitar
-    .find(conditions)
+    .find()
     .sort('-wins')
-    .limit(100)
+    .limit(20)
     .exec(function(err, guitars) {
       if (err) return next(err);
-
-      guitars.sort(function(a, b) {
-        if (a.wins / (a.wins + a.losses) < b.wins / (b.wins + b.losses)) { return 1; }
-        if (a.wins / (a.wins + a.losses) > b.wins / (b.wins + b.losses)) { return -1; }
-        return 0;
-      });
 
       res.send(guitars);
     });
