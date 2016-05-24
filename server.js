@@ -135,7 +135,7 @@ app.get('/api/guitars/top', function(req, res, next) {
 
   Guitar
     .find()
-    .sort('wins')
+    .sort('-wins')
     .limit(20)
     .exec(function(err, guitars) {
       if (err) return next(err);

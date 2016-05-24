@@ -5,7 +5,7 @@ var guitarSchema = new mongoose.Schema({
   brand: String,
   model: String,
   picture: String,
-  wins: { type: Number, default: 0 },
+  wins: Number,
   losses: { type: Number, default: 0 },
   random: { type: [Number], index: '2d' },
 });
