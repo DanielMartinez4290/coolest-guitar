@@ -96,13 +96,20 @@ class Navbar extends React.Component {
               <ul className='dropdown-menu'>
                   <li><Link to='guitars/1'>Les Paul</Link></li>
                   <li><Link to='guitars/4'>Firebird</Link></li>
+                  <li><Link to='guitars/7'>SG</Link></li>
+                  <li><Link to='guitars/8'>Flying V</Link></li>
+                  <li><Link to='guitars/9'>Semi Hollow</Link></li>
+
               </ul>
             </li>
             <li className='dropdown'>
               <a href='#' className='dropdown-toggle' data-toggle='dropdown'>Fender <span className='caret'></span></a>
               <ul className='dropdown-menu'>
                   <li><Link to='guitars/2'>Stratocaster</Link></li>
-                  <li><Link to='guitars/3'>Telecaster</Link></li>
+                  <li><Link to='guitars/5'>Telecaster</Link></li>
+                  <li><Link to='guitars/10'>Jaguar</Link></li>
+                  <li><Link to='guitars/11'>P Bass</Link></li>
+                  <li><Link to='guitars/12'>Jazz Bass</Link></li>
               </ul>
             </li>
             
