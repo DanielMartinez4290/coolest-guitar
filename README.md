@@ -1,3 +1,3 @@
-This Application is fully responsive and was built using React, Flux, MongoDB, Express.js, Node.js, and Bootstrap and allows for voting on your favorite guitar. The guitars with the most votes are displayed on the bottom of the page. Each guitar has it's own profile page. The amount of visitors currently visting the site is displayed on the Header via WebSockets. 
+This Application is fully responsive and was built using React, Flux, MongoDB, Express.js, Node.js, ES6, and Bootstrap and allows for voting on your favorite guitar. The guitars with the most votes are displayed on the bottom of the page. Each guitar has it's own profile page. The amount of visitors currently visting the site is displayed on the Header via WebSockets. 
 
 Site: http://coolest-guitar.herokuapp.com/
