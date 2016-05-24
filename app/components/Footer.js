@@ -38,7 +38,7 @@ class Footer extends React.Component {
       <footer>
         <div className='container'>
           <div className='row'>
-            <div className='col-sm-5'>
+            <div className='col-sm-5 col-xs-12'>
               <h3 className='lead'><strong>Information</strong> and <strong>Copyright</strong></h3>
               <p>© 2016 Daniel Martinez.</p>
             </div>
