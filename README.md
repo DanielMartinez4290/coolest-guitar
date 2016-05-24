@@ -1,0 +1,1 @@
+This Application allows for voting on your favorite guitar. The guitars with the most votes are displayed on the bottom of the page. Each guitar has it's own profile page. This application is fully responsive. 
