@@ -215,11 +215,22 @@ app.get('/api/stats', function(req, res, next) {
         });
       },
       function(callback) {
+        Guitar.count({ model: 'Acoustic' }, function(err, acousticCount) {
+          callback(err, acousticCount);
+        });
+      },
+      function(callback) {
         Guitar.aggregate({ $group: { _id: null, total: { $sum: '$wins' } } }, function(err, totalVotes) {
             var total = totalVotes.length ? totalVotes[0].total : 0;
             callback(err, total);
           }
         );
+      },
+      function(callback) {
+        Guitar.find({},'brand model',{sort:{wins:-1},limit:1}, function(err, coolestGuitar) {
+          var cGuitar =coolestGuitar[0]['brand']+ ' '+ coolestGuitar[0]['model'];
+          callback(err, cGuitar);
+        });
       }
     ],
     function(err, results) {
@@ -229,7 +240,9 @@ app.get('/api/stats', function(req, res, next) {
         totalCount: results[0],
         fenderCount: results[1],
         gibsonCount: results[2],
-        totalVotes: results[3],
+        acousticCount: results[3],
+        totalVotes: results[4],
+        coolestGuitar: results[5],
       });
     });
 });

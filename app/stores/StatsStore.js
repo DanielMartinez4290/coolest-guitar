@@ -7,8 +7,10 @@ class StatsStore {
     this.bindActions(StatsActions);
     this.fenderCount = 0;
     this.gibsonCount = 0;
+    this.acousticCount = 0;
     this.totalVotes = 0;
     this.totalCount = 0;
+    this.coolestGuitar = 0;
   }
 
   onGetStatsSuccess(data) {

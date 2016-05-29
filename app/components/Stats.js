@@ -29,25 +29,33 @@ class Stats extends React.Component {
           <table className='table table-striped'>
             <thead>
             <tr>
-              <th colSpan='2'>Stats</th>
+              <th colSpan='2' className="statsPageHeader">Statistics</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td>Fender Guitars</td>
-              <td>{this.state.fenderCount}</td>
+              <td className="statsHeader">Coolest Guitar</td>
+              <td className="statsData">{this.state.coolestGuitar}</td>
             </tr>
             <tr>
-              <td>Gibson Guitars</td>
-              <td>{this.state.gibsonCount}</td>
+              <td className="statsHeader">Fender Guitars</td>
+              <td className="statsData">{this.state.fenderCount}</td>
             </tr>
             <tr>
-              <td>Total votes cast</td>
-              <td>{this.state.totalVotes}</td>
+              <td className="statsHeader">Gibson Guitars</td>
+              <td className="statsData">{this.state.gibsonCount}</td>
             </tr>
             <tr>
-              <td>Total number of Guitars</td>
-              <td>{this.state.totalCount}</td>
+              <td className="statsHeader">Acoustic Guitars</td>
+              <td className="statsData">{this.state.acousticCount}</td>
+            </tr>
+            <tr>
+              <td className="statsHeader">Total votes cast</td>
+              <td className="statsData">{this.state.totalVotes}</td>
+            </tr>
+            <tr>
+              <td className="statsHeader">Total number of Guitars</td>
+              <td className="statsData">{this.state.totalCount}</td>
             </tr>
             </tbody>
           </table>

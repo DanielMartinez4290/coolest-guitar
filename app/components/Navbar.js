@@ -61,7 +61,7 @@ class Navbar extends React.Component {
               <div className="col-xs-12 col-sm-3 col-md-3 noPadding">
                 <div className="navbar-header">
                   
-                  <div className="col-xs-7 col-sm-12">
+                  <div className="col-xs-7 col-sm-12 noPadding">
                       <Link to='/' className='navbar-brand'>
                         <span className={'triangles animated ' + this.state.ajaxAnimationClass}>
                           <div className='tri invert'></div>
@@ -93,7 +93,7 @@ class Navbar extends React.Component {
                 <div className="collapse navbar-collapse noPadding" id="bs-example-navbar-collapse-1">
                         
                   <ul className="nav navbar-nav navbar-right col-sm-12 noPadding">
-                        <li className="col-sm-2 col-md-3 noPadding">
+                        <li className="col-sm-3 col-md-3 noPadding">
                           <form ref='searchForm' className='navbar-form animated' onSubmit={this.handleSubmit.bind(this)}>
                             <div className='input-group'>
                               <input type='text' className='form-control' placeholder='Search by model' value={this.state.searchQuery} onChange={NavbarActions.updateSearchQuery} />
