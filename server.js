@@ -165,6 +165,34 @@ app.get('/api/guitars/:id', function(req, res, next) {
   });
 });
 
+
+app.post('/api/guitars', function(req, res, next) {
+  var brand = req.body.brand;
+  var model = req.body.model;
+  var picture = req.body.picture;
+
+  Guitar.count({}, function(err, count) {
+    if (err) return next(err);
+
+    var guitarId = count + 1;
+
+    var guitar = new Guitar({
+              guitarId: guitarId,
+              brand: brand,
+              model: model,
+              picture: picture,
+              wins: 0,
+              losses: 0,
+              random: [Math.random(), 0]
+            });
+    guitar.save(function(err) {
+              if (err) return next(err);
+              res.send({ message: brand + ' ' +model+ ' has been added successfully!' });
+            });
+  });
+  
+});
+
 /**
  * GET /api/stats
  * Returns guitar statistics.

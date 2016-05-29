@@ -27,10 +27,8 @@ class HomeActions {
     })
       .done(() => {
         this.actions.getTwoGuitars();
-        console.log("passed");
       })
       .fail((jqXhr) => {
-        console.log("failed");
         this.actions.voteFail(jqXhr.responseJSON.message);
       });
   }

@@ -36,7 +36,7 @@ class Home extends React.Component {
       return (
         <div key={guitar.guitarId} className={index === 0 ? 'col-xs-6 col-sm-6 col-md-5 col-md-offset-1' : 'col-xs-6 col-sm-6 col-md-5'}>
           <div className='thumbnail fadeInUp animated'>
-            <img onClick={this.handleClick.bind(this, guitar)} src={'/public/img/'+guitar.picture}/>
+            <img onClick={this.handleClick.bind(this, guitar)} src={guitar.picture}/>
             <div className='caption text-center'>
               <h4>
                 <Link to={'/guitars/' + guitar.guitarId}><strong>{guitar.brand} {guitar.model}</strong></Link>

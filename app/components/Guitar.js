@@ -35,7 +35,7 @@ class Guitar extends React.Component {
         <div className="row profileFullText">
 
           <div className='profile-img col-xs-12 col-sm-12 col-md-6'>
-              <img src={'/public/img/'+this.state.picture} height="250" />
+              <img src={this.state.picture} height="250" />
           </div>
           <div className='profile-info clearfix col-xs-12 col-sm-12 col-md-6'>
             <h4 className='lead profileText'><strong>Brand:</strong> {this.state.brand}</h4>
