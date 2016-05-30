@@ -92,10 +92,10 @@ class Navbar extends React.Component {
               <div className="col-xs-12 col-sm-9 col-md-9 noPadding" id="navBar">          
                 <div className="collapse navbar-collapse noPadding" id="bs-example-navbar-collapse-1">
                         
-                  <ul className="nav navbar-nav navbar-right col-sm-12 noPadding">
-                        <li className="col-sm-3 col-md-3 noPadding">
-                          <form ref='searchForm' className='navbar-form animated' onSubmit={this.handleSubmit.bind(this)}>
-                            <div className='input-group'>
+                  <ul className="nav navbar-nav navbar-right col-sm-12">
+                        <li className="col-sm-3 col-md-3 searchForm">
+                          <form ref='searchForm' className='navbar-form animated searchForm' onSubmit={this.handleSubmit.bind(this)}>
+                            <div className='input-group navText'>
                               <input type='text' className='form-control' placeholder='Search by model' value={this.state.searchQuery} onChange={NavbarActions.updateSearchQuery} />
                               <span className='input-group-btn'>
                                 <button className='btn btn-default' onClick={this.handleSubmit.bind(this)}><span className='glyphicon glyphicon-search'></span></button>
@@ -103,9 +103,9 @@ class Navbar extends React.Component {
                             </div>
                           </form>
                         </li>
-                        <li className="col-md-1 noPadding navText"><Link to='/'>Home</Link></li>
-                        <li className="col-md-1 noPadding navText"><Link to='/stats'>Stats</Link></li>
-                        <li className='dropdown col-md-1.5 noPadding navText'>
+                        <li className="col-md-1 navText"><Link to='/'>Home</Link></li>
+                        <li className="col-md-1 navText"><Link to='/stats'>Stats</Link></li>
+                        <li className='dropdown col-md-1.5 navText'>
                           <a href='#' className='dropdown-toggle' data-toggle='dropdown'>Gibson <span className='caret'></span></a>
                           <ul className='dropdown-menu'>
                               <li><Link to='guitars/1'>Les Paul</Link></li>
@@ -115,7 +115,7 @@ class Navbar extends React.Component {
                               <li><Link to='guitars/5'>Semi Hollow</Link></li>
                           </ul>
                         </li>
-                        <li className="dropdown col-md-1.5 noPadding navText" >
+                        <li className="dropdown col-md-1.5 navText" >
                           <a href='#' className='dropdown-toggle' data-toggle='dropdown'>Fender <span className='caret'></span></a>
                           <ul className='dropdown-menu'>
                               <li><Link to='guitars/6'>American Stratocaster</Link></li>
@@ -126,7 +126,7 @@ class Navbar extends React.Component {
                               <li><Link to='guitars/11'>Jazz Bass</Link></li>
                           </ul>
                         </li>
-                        <li className='dropdown col-md-1.5 noPadding navText'>
+                        <li className='dropdown col-md-1.5 navText'>
                           <a href='#' className='dropdown-toggle' data-toggle='dropdown'>Acoustic <span className='caret'></span></a>
                           <ul className='dropdown-menu'>
                               <li><Link to='guitars/12'>Martin</Link></li>
@@ -136,7 +136,7 @@ class Navbar extends React.Component {
                               <li><Link to='guitars/16'>Takamine</Link></li>
                           </ul>
                         </li>
-                        <li className="col-sm-2.5 col-md-2 noPadding navText"><Link to='/add'>Add Guitar</Link></li>
+                        <li className="col-sm-2.5 col-md-2 navText"><Link to='/add'>Add Guitar</Link></li>
                   </ul>
                 </div>
               </div>
