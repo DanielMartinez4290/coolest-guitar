@@ -238,7 +238,8 @@ app.get('/api/stats', function(req, res, next) {
               var totalVotesGibson = totalVotesPerGuitar[6]['total'];  
             }
             else{
-              var totalVotesGibson = 0;
+              //var totalVotesGibson = 0;
+              var totalVotesGibson = totalVotesPerGuitar;
             }
             
             callback(err, totalVotesGibson);
@@ -252,6 +253,7 @@ app.get('/api/stats', function(req, res, next) {
             }
             else{
               var totalVotesFender = 0;
+              //var totalVotesFender = totalVotesPerGuitar;
             }
 
             callback(err, totalVotesFender);
@@ -265,7 +267,8 @@ app.get('/api/stats', function(req, res, next) {
               var totalVotesAcoustic = totalVotesPerGuitar[0]['total'];    
             }
             else{
-              var totalVotesAcoustic = 0;
+              var totalVotesAcoustic = totalVotesPerGuitar;
+              //var totalVotesAcoustic = 0;
             }
 
             callback(err, totalVotesAcoustic);
