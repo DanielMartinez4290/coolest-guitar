@@ -235,10 +235,10 @@ app.get('/api/stats', function(req, res, next) {
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
             if (typeof a != "undefined") {
-              totalVotesGibson = totalVotesPerGuitar[6]['total'];  
+              var totalVotesGibson = totalVotesPerGuitar[6]['total'];  
             }
             else{
-              totalVotesGibson = 0;
+              var totalVotesGibson = 0;
             }
             
             callback(err, totalVotesGibson);
@@ -248,10 +248,10 @@ app.get('/api/stats', function(req, res, next) {
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
             if (typeof a != "undefined") {
-              totalVotesFender = totalVotesPerGuitar[4]['total'];
+              var totalVotesFender = totalVotesPerGuitar[4]['total'];
             }
             else{
-              totalVotesFender = 0;
+              var totalVotesFender = 0;
             }
 
             callback(err, totalVotesFender);
@@ -262,10 +262,10 @@ app.get('/api/stats', function(req, res, next) {
         Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
             
             if (typeof a != "undefined") {
-              totalVotesAcoustic = totalVotesPerGuitar[0]['total'];    
+              var totalVotesAcoustic = totalVotesPerGuitar[0]['total'];    
             }
             else{
-              totalVotesAcoustic = 0;
+              var totalVotesAcoustic = 0;
             }
 
             callback(err, totalVotesAcoustic);
