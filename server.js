@@ -262,12 +262,12 @@ app.get('/api/stats', function(req, res, next) {
         Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
             
             if (typeof a != "undefined") {
-              totalVotesAcoustic = totalVotesPerGuitar[11]['total'];    
+              totalVotesAcoustic = totalVotesPerGuitar[0]['total'];    
             }
             else{
-              totalVotesAcoustic = totalVotesPerGuitar;
+              totalVotesAcoustic = 0;
             }
-            
+
             callback(err, totalVotesAcoustic);
           }
         );
