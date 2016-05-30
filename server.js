@@ -235,8 +235,9 @@ app.get('/api/stats', function(req, res, next) {
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGibson) {
             if (typeof totalVotesPerGibson[6] != "undefined") {
-              var totalVotesGibson = totalVotesPerGibson[6]['total'];  
-              
+              //var totalVotesGibson = totalVotesPerGibson[6]['total'];  
+              var totalVotesGibson = totalVotesPerGibson;  
+
             }
             else{
               var totalVotesGibson = 0;
@@ -264,7 +265,8 @@ app.get('/api/stats', function(req, res, next) {
         Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerAcoustic) {
             
             if (typeof totalVotesPerAcoustic[0] != "undefined") {
-              var totalVotesAcoustic = totalVotesPerAcoustic[0]['total'];    
+              //var totalVotesAcoustic = totalVotesPerAcoustic[0]['total']; 
+              var totalVotesAcoustic = totalVotesPerAcoustic;    
             }
             else{
               var totalVotesAcoustic = 0;
