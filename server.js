@@ -233,13 +233,13 @@ app.get('/api/stats', function(req, res, next) {
         });
       },
       function(callback) {
-        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGibson) {
             if (typeof a != "undefined") {
-              var totalVotesGibson = totalVotesPerGuitar[6]['total'];  
+              var totalVotesGibson = totalVotesPerGibson[6]['total'];  
             }
             else{
               //var totalVotesGibson = 0;
-              var totalVotesGibson = totalVotesPerGuitar;
+              var totalVotesGibson = totalVotesPerGibson;
             }
             
             callback(err, totalVotesGibson);
@@ -247,9 +247,9 @@ app.get('/api/stats', function(req, res, next) {
         );
       },
       function(callback) {
-        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerFender) {
             if (typeof a != "undefined") {
-              var totalVotesFender = totalVotesPerGuitar[4]['total'];
+              var totalVotesFender = totalVotesPerFender[4]['total'];
             }
             else{
               var totalVotesFender = 0;
@@ -261,13 +261,13 @@ app.get('/api/stats', function(req, res, next) {
         );
       },
       function(callback) {
-        Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+        Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerAcoustic) {
             
             if (typeof a != "undefined") {
-              var totalVotesAcoustic = totalVotesPerGuitar[0]['total'];    
+              var totalVotesAcoustic = totalVotesPerAcoustic[0]['total'];    
             }
             else{
-              var totalVotesAcoustic = totalVotesPerGuitar;
+              var totalVotesAcoustic = totalVotesPerAcoustic;
               //var totalVotesAcoustic = 0;
             }
 
