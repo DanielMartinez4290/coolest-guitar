@@ -234,7 +234,7 @@ app.get('/api/stats', function(req, res, next) {
       },
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
-            totalVotesGibson = totalVotesPerGuitar[0]['total'];
+            totalVotesGibson = totalVotesPerGuitar;
             callback(err, totalVotesGibson);
           }
         );

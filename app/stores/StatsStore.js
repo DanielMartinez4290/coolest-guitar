@@ -20,6 +20,7 @@ class StatsStore {
       assign(this, data);
       
       var gibsonCount = this.totalVotesGibson;
+      console.log(gibsonCount);
       var fenderCount = this.totalVotesFender;
       var acousticCount = this.totalVotesAcoustic;
       
