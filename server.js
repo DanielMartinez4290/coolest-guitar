@@ -234,25 +234,38 @@ app.get('/api/stats', function(req, res, next) {
       },
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
-            totalVotesGibson = totalVotesPerGuitar;
+            if (typeof a != "undefined") {
+              totalVotesGibson = totalVotesPerGuitar[6]['total'];  
+            }
+            else{
+              totalVotesGibson = 0;
+            }
+            
             callback(err, totalVotesGibson);
           }
         );
       },
       function(callback) {
         Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
-            totalVotesFender = totalVotesPerGuitar[1]['total'];
+            if (typeof a != "undefined") {
+              totalVotesFender = totalVotesPerGuitar[4]['total'];
+            }
+            else{
+              totalVotesFender = 0;
+            }
+
             callback(err, totalVotesFender);
           }
         );
       },
       function(callback) {
         Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+            
             if (typeof a != "undefined") {
               totalVotesAcoustic = totalVotesPerGuitar[11]['total'];    
             }
             else{
-              totalVotesAcoustic = 0;
+              totalVotesAcoustic = totalVotesPerGuitar;
             }
             
             callback(err, totalVotesAcoustic);

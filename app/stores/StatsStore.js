@@ -20,9 +20,9 @@ class StatsStore {
       assign(this, data);
       
       var gibsonCount = this.totalVotesGibson;
-      console.log(gibsonCount);
       var fenderCount = this.totalVotesFender;
       var acousticCount = this.totalVotesAcoustic;
+      console.log(acousticCount);
       
       var chart = new CanvasJS.Chart("chartContainer", {
         theme: "theme2",
