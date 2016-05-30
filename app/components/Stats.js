@@ -12,7 +12,9 @@ class Stats extends React.Component {
   componentDidMount() {
     StatsStore.listen(this.onChange);
     StatsActions.getStats();
+
   }
+  
 
   componentWillUnmount() {
     StatsStore.unlisten(this.onChange);
@@ -23,6 +25,7 @@ class Stats extends React.Component {
   }
 
   render() {
+  
     return (
       <div className='container statsPage'>
         <div className='panel panel-default'>
@@ -59,6 +62,9 @@ class Stats extends React.Component {
             </tr>
             </tbody>
           </table>
+          <div className="statsChartContainer">
+            <div id="chartContainer"></div>
+          </div>
         </div>
       </div>
     );

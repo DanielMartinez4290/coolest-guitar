@@ -54,7 +54,7 @@ class AddGuitar extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='container addGuitarPage'>
         <div className='row flipInX animated'>
           <div className='col-sm-8'>
             <div className='panel panel-default'>

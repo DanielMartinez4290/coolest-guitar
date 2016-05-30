@@ -11,10 +11,38 @@ class StatsStore {
     this.totalVotes = 0;
     this.totalCount = 0;
     this.coolestGuitar = 0;
+    this.totalVotesGibson = 0;
+    this.totalVotesFender = 0;
+    this.totalVotesAcoustic = 0;
   }
 
   onGetStatsSuccess(data) {
-    assign(this, data);
+      assign(this, data);
+      
+      var gibsonCount = this.totalVotesGibson;
+      var fenderCount = this.totalVotesFender;
+      var acousticCount = this.totalVotesAcoustic;
+      
+      var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "theme2",
+        title:{
+          text: "Guitar Votes Per Type"
+        },
+        animationEnabled: false,
+        data: [              
+        {
+          type: "column",
+          dataPoints: [
+            { label: "Gibson",  y: gibsonCount  },
+            { label: "Fender", y: fenderCount  },
+            { label: "Acoustic", y: acousticCount  },
+          ]
+        }
+        ]
+      });
+      chart.render();
+      
+    
   }
 
   onGetStatsFail(jqXhr) {

@@ -231,6 +231,33 @@ app.get('/api/stats', function(req, res, next) {
           var cGuitar =coolestGuitar[0]['brand']+ ' '+ coolestGuitar[0]['model'];
           callback(err, cGuitar);
         });
+      },
+      function(callback) {
+        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+            totalVotesGibson = totalVotesPerGuitar[0]['total'];
+            callback(err, totalVotesGibson);
+          }
+        );
+      },
+      function(callback) {
+        Guitar.aggregate({ $group: { _id: {brand:"$brand"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+            totalVotesFender = totalVotesPerGuitar[1]['total'];
+            callback(err, totalVotesFender);
+          }
+        );
+      },
+      function(callback) {
+        Guitar.aggregate({ $group: { _id: {model:"$model"}, total: { $sum: '$wins' } } }, function(err, totalVotesPerGuitar) {
+            if (typeof a != "undefined") {
+              totalVotesAcoustic = totalVotesPerGuitar[11]['total'];    
+            }
+            else{
+              totalVotesAcoustic = 0;
+            }
+            
+            callback(err, totalVotesAcoustic);
+          }
+        );
       }
     ],
     function(err, results) {
@@ -243,6 +270,9 @@ app.get('/api/stats', function(req, res, next) {
         acousticCount: results[3],
         totalVotes: results[4],
         coolestGuitar: results[5],
+        totalVotesGibson: results[6],
+        totalVotesFender: results[7],
+        totalVotesAcoustic: results[8],
       });
     });
 });
